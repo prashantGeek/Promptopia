@@ -5,9 +5,15 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
 
+const searchFunction = () => {
+  const searchParams = useSearchParams();
+
+  return searchParams;
+};
+
 const UpdatePrompt = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const searchParams = searchFunction();
   const promptId = searchParams.get("id");
 
   const [post, setPost] = useState({ prompt: "", tag: "" });
