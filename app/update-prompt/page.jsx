@@ -51,7 +51,7 @@ const UpdatePrompt = () => {
       setIsSubmitting(false);
     }
   };
-
+  //suspense around usesearchparams
   return (
     <Suspense>
       <Form
