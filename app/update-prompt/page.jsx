@@ -5,15 +5,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
 
-const searchFunction = () => {
-  const searchParams = useSearchParams();
-
-  return searchParams;
-};
-
 const UpdatePrompt = () => {
   const router = useRouter();
-  const searchParams = searchFunction();
+  const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
   const [post, setPost] = useState({ prompt: "", tag: "" });
@@ -57,7 +51,7 @@ const UpdatePrompt = () => {
       setIsSubmitting(false);
     }
   };
-  //suspense around usesearchparams
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Form
